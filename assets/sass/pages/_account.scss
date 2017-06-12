@@ -1,0 +1,244 @@
+body#account {
+	
+	.body {
+		
+		.account-panel {
+			@include span(3);
+
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0 0 15px 0;
+				font-family: 'Darby Poster';
+
+				li {
+					margin-bottom: 10px;
+
+					text-transform: uppercase;
+					@include fontsize(21);
+					letter-spacing: 3px;
+
+					a {
+						text-decoration: none;
+
+						&.current {
+							border-bottom: 1px solid $headerBG;
+						}
+					}
+				}
+			}
+		}
+		
+		.account-content, .account-login {
+			@include span(9 last); 
+
+			nav.woocommerce-MyAccount-navigation { display: none; }
+
+	 		.form-row {
+	 			@include span(full);
+	 			padding: 5px 0;
+
+	 			label { 
+	 				@include span(2 of 8); 
+	 				@include fontsize(12, 3.46);
+	 				text-transform: uppercase;
+
+	 				abbr.required, span.required { color: $headerBG; }
+	 			}
+
+	 			input[type="text"],
+	 			input[type="email"],
+	 			input[type="tel"],
+	 			input[type="password"],
+	 			textarea { 
+	 				@include span(6 of 8 last); 
+					@include fontsize(16, 2.5);
+	 			}
+
+	 			.select2-container {
+	 				float: right;
+    				width: 73.98374% !important;
+
+    				&[disabled="disabled"] {
+    					a {
+	    					pointer-events: none;
+	    					background: $headerBGOffset;
+	    				}
+    				}
+    			}
+	 		}
+
+			table.account-orders-table, table.pwlp_table {
+				border-spacing: 0px;
+				border: 0px;
+
+				th { 
+					text-transform: uppercase;
+					@include fontsize(14);
+					border-bottom: 1px solid $headerBG;
+					padding: 0 0 5px 0;
+					vertical-align: middle !important;
+
+					&:first-child {
+						padding-left: 10px;
+					}
+				}
+
+				td { 
+					text-transform: uppercase;
+					border-bottom: 1px solid $headerBG;
+					vertical-align: middle !important;
+					padding: 20px 0px;
+
+					&:first-child {
+						padding-left: 10px;
+					}
+
+					&.product-thumbnail {
+						padding: 20px 0 0 0;
+					}
+
+					&.shop-details, &.product-add-to-cart {
+						padding: 50px 0 0 0;
+					}
+				}
+			}
+
+			table.order_details, table.customer_details {
+				border-spacing: 0px;
+				border: 0px;
+				border-bottom: 1px solid $headerBG;
+				border-radius: 0;
+
+				th, td { 
+					vertical-align: middle !important;
+					padding: 10px 0px;
+					border: 0;
+
+					&.product-name {
+						img {
+							max-width: 50px;
+							float: left;
+							margin: 0 20px 0px 0;
+						}
+					}
+
+					&:first-child {
+						padding-left: 10px;
+					}
+				}
+
+				tfoot {
+					th {
+						border: 0;
+						padding: 10px 0px 10px 10px !important;
+					}
+
+					tr:first-child {
+						th, td {
+							border-top: 1px solid $headerBG;
+							border-bottom: 0;
+						}
+					}
+				}
+			}
+
+			table.order_details {
+				tr:first-child {
+					th { 
+						text-transform: uppercase;
+						@include fontsize(14);
+						border: 0;
+						border-bottom: 1px solid $headerBG;
+						padding: 0 0 5px 0;
+						vertical-align: middle !important;
+
+						&:first-child {
+							padding-left: 10px;
+						}
+					}
+				}
+			}
+
+			table.customer_details, table.pwlp_table {
+				tr:first-child {
+					th, td { 
+						border-top: 1px solid $headerBG;
+					}
+				}
+			}
+
+			table.pwlp_table {
+
+				td, th {
+					vertical-align: top !important;
+					border-bottom: 1px solid $headerBG !important;
+				}
+
+				td.product-thumbnail {
+					width: 30%;
+					img {
+						width: 100%;
+						max-width: 250px !important;
+					}
+				}
+				tbody {
+					tr:first-child {
+						td, th {
+							border-top: 1px solid $headerBG !important;
+						}
+					}
+
+					tr:last-child {
+						td, th {
+							border-bottom: 1px solid $headerBG !important;
+						}
+					}
+				}
+
+				tfoot {
+					th, td {
+						border: 0 !important;
+
+						ul {
+							padding-left: 0;
+						}
+					}
+				}
+			}
+
+			fieldset {
+				@include span(full);
+				border: 0;
+				margin: 20px 0;
+				padding: 10px 0;
+				border-top: 1px solid $headerBG;
+				border-bottom: 1px solid $headerBG;
+			}
+		}
+
+		.account-login {
+			@include span(isolate 6 at 4);
+
+			form.login, form.register {
+				border: 0;
+				padding: 0;
+				margin: 0;
+			}
+
+			#customer_login {
+				@include span(full);
+
+				.col-1, .col-2 {
+					@include span(full);
+				}
+			}
+		}
+
+		mark {
+			background: none !important;
+
+		}
+	}
+
+}

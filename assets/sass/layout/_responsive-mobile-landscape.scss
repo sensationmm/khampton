@@ -1,0 +1,78 @@
+@media (min-width: $mobile+1) and (max-width: $mobile-landscape) {
+
+	body {
+		header {
+			.cart {
+				top: 30%;
+
+				a { 
+					display: inline-block; 
+					text-align: right;
+					width: 18px;
+					height: 18px;
+					margin-left: 10px !important;
+
+				}
+				span.cart-divider {
+					display: none;
+				}
+
+				a:first-child {
+					background: url(../images/icon-account-reversed.png) center left no-repeat;
+					background-size: cover;
+					text-indent: 100px;
+					overflow: hidden;
+				}
+
+				.cart-contents {
+					.bag-total {
+						display: none;
+					}
+				}
+			}
+		}
+
+		footer, nav.popup {
+			#mc_signup {
+				@include span(full);
+			}
+		}
+	}
+
+	body#home {
+		.page_title {
+			h1 {
+				@include fontsize(120, 0.9);
+			}
+		}
+	}
+
+	body#woocommerce, body#sale {
+
+		.page_title {
+			h1 {
+				@include fontsize(150);
+			}
+			h2 {
+				margin-bottom: 1em !important;
+			}
+		}
+	}
+
+	body#about {
+		.intro {
+			@include span(isolate 8 at 3);
+		}
+	}
+
+	body#page {
+		.body {
+			@include span(full);
+			div.wpcf7 {
+				@include span(full);
+			}
+		}
+	}
+
+
+}

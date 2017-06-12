@@ -1,0 +1,82 @@
+body#faq {
+
+	.faqs {
+		margin-top: 5%;
+		border-top: 1px solid $headerBG;
+
+		.faq-section {
+			@include clearfix;
+			border-bottom: 1px solid $headerBG;
+
+			.faq-header {
+				padding: 30px 20px 40px 20px;
+				text-transform: uppercase;
+				text-align: center;
+				cursor: pointer;
+				background: url(../images/arrow-reversed.png) center 75% no-repeat;
+				background-size: 30px;
+
+				&:hover {
+					@include opacity(0.5);
+				}
+
+				h2 {
+					display: inline;
+				    @include fontsize(30);
+				    font-family: 'Darby Poster';
+				    letter-spacing: 4px;
+				    background-size: 30px;
+				    padding: 0 70px;
+				}
+
+				&.active {
+				    background-image: url(../images/icon-cross.png);
+				}
+			}
+
+			.faq-content {
+				display: none;
+				padding-top: 20px;
+				padding-bottom: 40px;
+				@include clearfix;
+
+				.faq {
+					@include span(6);
+					padding: 0 7%;
+					text-align: center;
+					vertical-align: middle;
+					min-height: 70px;
+					cursor: pointer;
+					margin-bottom: 5px;
+
+					&:hover {
+						h3 {
+							@include opacity(0.5);
+						}
+					}
+
+					h3 {
+						text-transform: uppercase;
+						@include fontsize(16);
+					}
+
+					&:nth-child(2n) {
+						@include last;
+					}
+
+					&:nth-child(2n+1) {
+						clear: both;
+					}
+
+					p {
+						display: none;
+
+						&:last-child {
+							margin-bottom: 40px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,83 @@
+body#home {
+	.boxes {
+		.boxes-row {
+			.box {
+				img { @include opacity(0); }
+				.box-text { @include opacity(0); }
+			}
+
+			.box.box1, .box.box5, .box.box6 {
+				img { 
+					position: relative;
+					opacity: 0;
+					top: -40px;
+				}
+				.box-text {
+					bottom: -45px;
+				}
+			}
+			.box.box2, .box.box3, .box.box4 {
+				img { 
+					position: relative;
+					opacity: 0;
+					top: 40px;
+				}
+				.box-text {
+					top: -35px;
+				}
+			}
+		}
+	}
+}
+
+
+.fade-in {
+	top: 40px;
+	@include opacity(0);
+}
+
+.fade-in-css, #woocommerce-cart .woocommerce {
+	opacity: 0 !important;
+	-webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 0.5s; /* Firefox < 16 */
+	-ms-animation: fadein 0.5s; /* Internet Explorer */
+	-o-animation: fadein 0.5s; /* Opera < 12.1 */
+	animation: fadein 0.5s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	animation-delay: 0.5s;
+
+	&.image-slide { animation-delay: 0.5s; }
+	&.summary-inner, &.product-info { animation-delay: 0.7s; }
+	&.thumbnails { animation-delay: 0.9s; }
+}
+
+
+@keyframes fadein {
+    from { opacity: 0; top: 20px; }
+    to   { opacity: 1; top: 0px; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; top: 20px; }
+    to   { opacity: 1; top: 0px; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; top: 20px; }
+    to   { opacity: 1; top: 0px; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; top: 20px; }
+    to   { opacity: 1; top: 0px; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; top: 20px; }
+    to   { opacity: 1; top: 0px; }
+}

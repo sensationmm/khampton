@@ -1,0 +1,162 @@
+form, #woocommerce-cart .woocommerce form, form.wpcf7-form {
+
+	.form-row, p {
+		input[type="text"],
+		input[type="email"],
+		input[type="tel"],
+		input[type="password"],
+		select,
+		textarea, 
+		input.input-text,
+		.select2-container {
+			@include fontsize(16, 2.5);
+			outline: 0 !important;
+			border: 1px solid $headerBGOffset !important;
+			-webkit-appearance: none;
+			padding: 0 8px;
+			line-height: 2.5em !important;
+		}
+
+		input[type="text"]:disabled,
+		input[type="email"]:disabled,
+		input[type="tel"]:disabled,
+		select:disabled,
+		textarea:disabled {
+			background: $headerBGOffset;
+    		-webkit-appearance: none !important;
+		}
+
+		textarea {
+			padding: 8px;
+			line-height: 1.4;
+		}
+
+		.select2-container {
+			padding: 0;
+
+			a.select2-choice {
+				border: 0 !important;
+			}
+		}
+
+		select.country_select {
+			border: 0 !important;
+		}
+	}
+
+	input.input-checkbox {
+		-webkit-appearance: checkbox !important;
+	}
+
+	input#createaccount {
+	    margin: 12px 0;
+	    display: inline-block;
+	}
+
+}
+
+form.woocommerce-ResetPassword, 
+form.login, 
+form.register, 
+form.edit-account, 
+form.wpcf7-form
+.woocommerce-MyAccount-content form {
+
+	border-radius: 0 !important;
+
+	.form-row {
+		width: 100% !important;
+	}
+    input.button, input.wpcf7-submit {
+        float: right;
+    }
+}
+
+.woocommerce form.login {
+	.form-row {
+		@include span(full);
+
+		label { 
+			@include span(2); 
+			@include fontsize(12, 3.46);
+			text-transform: uppercase;
+
+			span.required { color: $headerBG; }
+		}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="tel"],
+		input[type="password"],
+		textarea { 
+			@include span(10 last); 
+		}
+
+		.select2-container {
+			float: right;
+			width: 73.98374% !important;
+
+			&[disabled="disabled"] {
+				a {
+					pointer-events: none;
+					background: $headerBGOffset;
+				}
+			}
+		}
+	}
+}
+
+div.wpcf7 {
+	@include span(isolate 8 at 3);
+	margin: 5% auto 0 auto !important;
+	float: none;
+
+	p { @include span(full); }
+
+	form.wpcf7-form {
+		label { 
+			@include span(full); 
+			@include fontsize(12, 3.46);
+			text-transform: uppercase;
+
+			span.required { color: $headerBG; }
+		}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="tel"],
+		input[type="password"], { 
+			@include span(full); 
+			@include fontsize(16, 2.5);
+			outline: 0 !important;
+			border: 1px solid $headerBGOffset !important;
+			-webkit-appearance: none;
+			padding: 0 8px;
+			line-height: 2.5em !important;
+		}
+
+		textarea {
+			@include span(full); 
+			@include fontsize(16);
+			outline: 0 !important;
+			border: 1px solid $headerBGOffset !important;
+			-webkit-appearance: none;
+			padding: 10px 8px;
+			line-height: 1.4em !important;
+		}
+
+		input.wpcf7-submit {
+			float: right;
+			cursor: pointer !important;
+		    -webkit-appearance: none !important;
+		}
+
+		.wpcf7-not-valid-tip {
+			display: inline-block !important;
+		}
+	}
+}
+
+p.lost_password {
+    text-align: right;
+}

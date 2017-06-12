@@ -1,0 +1,21 @@
+@media (min-width: 1680px) {
+
+	body#home{
+		.page_title {
+			h1 {
+				@include fontsize(200, 0.9);
+			}
+		} 
+	}
+
+	body#woocommerce, body#sale {
+		.header-outer {
+			.page_title {
+				h1 {
+					@include fontsize(250, 0.9);
+				}
+			} 
+		}
+	}
+
+}

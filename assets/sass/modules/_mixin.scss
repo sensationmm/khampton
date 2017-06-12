@@ -1,0 +1,95 @@
+@mixin background($image, $positionY:top, $positionX:left, $size:contain, $repeat:no-repeat)
+{
+	background-image: url($image);
+	background-size: $size;
+	background-position: $positionX $positionY;
+	background-repeat: $repeat;
+}
+
+@mixin fontsize($value, $lineHeight: 1.4)
+{
+	font-size: $value + 0px;
+	@include breakpoint(0 $mobile) {
+		$valueHold: $value / 13;
+		@if $valueHold < 2.5 {
+			font-size: 12px;
+		} @else {
+			font-size: $valueHold + 0vw;
+		}
+	}
+	@include breakpoint(($mobile+1) $mobile-landscape) {
+		$valueHold: $value / 12;
+		@if $valueHold < 2.5 {
+			font-size: 12px;
+		} @else {
+			font-size: $valueHold + 0vw;
+		}
+	}
+	@include breakpoint(($mobile-landscape+1) 1250px) {
+		$valueHold: $value / 15;
+		@if $valueHold < 2.5 {
+			font-size: 14px;
+		} @else {
+			font-size: $valueHold + 0vw;
+		}
+	}
+	@include breakpoint(1251px 1500px) {
+		font-size: $value/15 + 0vw;
+	}
+	line-height: $lineHeight;
+}
+
+@mixin navlink() {
+	a {
+		text-decoration: none;
+		outline: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+@mixin nolist() {
+	ul {
+		list-style: none;
+		padding: 0px;
+		margin: 0px;
+
+		li {
+			padding: 0px;
+			margin: 0px;
+		}
+	}
+}
+
+@mixin webfonts($webfonts, $weight: normal, $style: normal) {
+	@each $webfont in $webfonts {
+		@font-face {
+			font-family: $webfont;
+			src: url('../fonts/#{$webfont}.eot');
+			src: url('../fonts/#{$webfont}.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/#{$webfont}.woff') format('woff'),
+			url('../fonts/#{$webfont}.ttf') format('truetype'),
+			url('../fonts/#{$webfont}.svg#ywftsvg') format('svg');
+			font-weight: $weight;
+			font-style: $style;
+		}
+		%#{$webfont}-webfont {
+			font-family: $webfont, $base-font-family !important;
+		}
+	}
+}
+
+@mixin calc($property, $expression) { 
+  #{$property}: -webkit-calc(#{$expression}); 
+  #{$property}: calc(#{$expression}); 
+} 
+
+@mixin opacity($value) {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=$value*100)";
+	filter: alpha(opacity=($value*100));
+	-moz-opacity: $value;
+	-khtml-opacity: $value;
+	opacity: $value;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Grunt-Sass-Compass-Boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Rob Davarnia <robdvr@gmail.com>",
+  "license": "GPL-2.0",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}

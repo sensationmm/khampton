@@ -1,0 +1,207 @@
+@font-face {
+  font-family: 'Darby';
+  src: url('../fonts/DarbySans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/DarbySans-Regular.otf')  format('opentype'),
+        url('../fonts/DarbySans-Regular.woff') format('woff'),
+        url('../fonts/DarbySans-Regular.ttf')  format('truetype'),
+        url('../fonts/DarbySans-Regular.svg#DarbySans-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Darby Italic';
+  src: url('../fonts/DarbySans-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/DarbySans-RegularItalic.otf')  format('opentype'),
+        url('../fonts/DarbySans-RegularItalic.woff') format('woff'),
+        url('../fonts/DarbySans-RegularItalic.ttf')  format('truetype'),
+        url('../fonts/DarbySans-RegularItalic.svg#DarbySans-RegularItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'Darby Poster';
+    src: url('../fonts/DarbySansPoster-Thin.eot?#iefix') format('embedded-opentype'),  
+        url('../fonts/DarbySansPoster-Thin.otf')  format('opentype'),
+        url('../fonts/DarbySansPoster-Thin.woff') format('woff'), 
+        url('../fonts/DarbySansPoster-Thin.ttf')  format('truetype'), 
+        url('../fonts/DarbySansPoster-Thin.svg#Darby PosterSansPoster-Thin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Darby Poster Italic';
+    src: url('../fonts/DarbySansPoster-RegularItalic.eot?#iefix') format('embedded-opentype'),  
+        url('../fonts/DarbySansPoster-RegularItalic.otf')  format('opentype'),
+        url('../fonts/DarbySansPoster-RegularItalic.woff') format('woff'), 
+        url('../fonts/DarbySansPoster-RegularItalic.ttf')  format('truetype'), 
+        url('../fonts/DarbySansPoster-RegularItalic.svg#DarbySansPoster-RegularItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: 2px;
+}
+
+@font-face {
+    font-family: 'Darby Light';
+    src: url('../fonts/DarbySansPoster-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/DarbySansPoster-Light.otf')  format('opentype'),
+        url('../fonts/DarbySansPoster-Light.woff') format('woff'), 
+        url('../fonts/DarbySansPoster-Light.ttf')  format('truetype'), 
+        url('../fonts/DarbySansPoster-Light.svg#DarbySansPoster-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+body {
+	font-family: 'Darby';
+	@include fontsize(12);
+    letter-spacing: 1px;
+
+    .page_title {
+		h1 {
+  			font-family: 'Darby Poster';
+  			@include fontsize(120, 1);
+  			text-transform: uppercase;
+  			font-weight: normal;
+  			text-align: center;
+  			letter-spacing: 0.07em;
+	    }
+
+	    h2 {
+            font-family: 'Darby Poster';
+            text-transform: uppercase;
+            @include fontsize(20, 1);
+            font-weight: normal;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            margin-bottom: 30px;
+	    }
+    }
+
+    ul.menu {
+        padding: 0;
+        margin: 0;
+    	a {
+    		text-decoration: none;
+
+    		&:hover {
+    			text-decoration: underline;
+    		}
+    	}
+    }
+
+    ul.footer {
+    	list-style: none;
+    	display: inline-block;
+    	margin-bottom: 0;
+        text-transform: none;
+        @include fontsize(12);
+        color: $headerBGOffset;
+        letter-spacing: 2px;
+
+    	li { 
+    		display: inline; 
+    		padding: 0 10px;
+
+    		&:last-of-type {
+    			border: 0;
+    		}
+    	}
+    }
+}
+
+body#woocommerce {
+    .page_title {
+        h1 {
+            @include fontsize(200);
+            letter-spacing: 0.05em;
+        }
+        h2 {
+            margin-bottom: 2em !important;
+        }
+    }
+}
+
+body#page, body#woocommerce-cart, body#account {
+    .page_title {
+        padding: 2% 0;
+
+        h1 {
+            @include fontsize(60);
+        }
+    }
+}
+
+
+
+a.button:not(.add_to_cart_button), 
+button.single_add_to_cart_button, 
+a.checkout-button, 
+a.continue-shopping-button,
+input.button,
+table.pwlp_table a.add_to_cart_button,
+#place_order,
+form.wpcf7-form input.wpcf7-submit {
+    outline: 0 !important;
+    background: $headerBG !important;
+    color: #fff !important;
+    text-transform: uppercase !important;
+    font-family: 'Darby' !important;
+    letter-spacing: 2px !important;
+    border: 1px solid $headerBG !important;
+    border-radius: 0 !important;
+    text-align: center !important;
+    padding: 14px 24px 12px 24px !important;
+    font-weight: normal !important;
+    -webkit-font-smoothing: auto !important;
+    letter-spacing: 2px;
+    transition: all 0.3s ease 0s;
+    @include fontsize(12, 1);
+    -webkit-appearance: none !important;
+
+    &:hover {
+        background: $headerBGOffset !important;
+        color: $headerBG !important;
+    }
+}
+
+button.single_add_to_cart_button {
+    width: 75%;
+    margin: 0 !important;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: inherit !important;
+}
+
+a.checkout-button, a.continue-shopping-button, #place_order {
+    display: block !important;
+    width: 100% !important;
+    -webkit-appearance: none !important;
+}
+
+a.continue-shopping-button, a.button.continue-shopping-button {
+    color: $headerBG !important;
+    background: #fff !important;
+    border-bottom: 0 !important;
+    -webkit-appearance: none !important;
+}
+
+dl.variation {
+    display: inline-block;
+
+    dt, dd {
+        -webkit-margin-start: 0px;
+    }
+}
+
+@media  (max-width: $mobile-landscape) {
+    body#woocommerce-cart .cart-table .shop_table:not(.account-orders-table) td.shop-details a.product-name, body#woocommerce-cart .account-content .shop_table:not(.account-orders-table) td.shop-details a.product-name, body#account .cart-table .shop_table:not(.account-orders-table) td.shop-details a.product-name, body#account .account-content .shop_table:not(.account-orders-table) td.shop-details a.product-name {
+    font-family: 'Darby' !important;
+}
+    }

@@ -1,0 +1,148 @@
+body#about {
+
+	.body-outer {
+		height: 97.6vh;
+
+		.body {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+	.page_title {
+		padding: 0% 0 2% 0;
+
+		h1 {
+			@include fontsize(200, 0.9);
+			span {
+	    		font-family: 'Darby Poster Italic';
+				display: inline;
+			}
+		}
+	}
+
+	.intro {
+		@include span(isolate 5 at 4.5);
+		text-align: center;
+		line-height: 1.5;
+	}
+
+	.scroll-to-boxes {
+		@include span(full);
+		text-align: center;
+		cursor: pointer;
+		background: #fff url(../images/arrow-reversed.png) bottom center no-repeat;
+		background-size: 30px;
+		padding-bottom: 20px;
+		clear: both;
+		position: absolute;
+		bottom: 2.6vh;
+		left: 0px;
+	}
+
+	.scroll-to-next {
+		width: 100%;
+		text-align: center;
+		cursor: pointer;
+		background: url(../images/arrow-reversed.png) bottom center no-repeat;
+		background-size: 30px;
+		padding-bottom: 20px;
+		clear: both;
+		position: absolute;
+		bottom: 2.6vh;
+	}
+
+	.boxes {
+		width: 100%;
+		clear: both;
+		padding: 0px 20px 0 20px;
+		background: #ffffff;
+		padding: 2.6vh 20px;
+
+		.box {
+			background: center center no-repeat;
+			background-size: cover;
+			height: 94.8vh;
+			// max-height: 768px;
+			margin-bottom: 2.6vh;
+
+			.box-inner {
+				@include container($max+0px);
+			}
+
+			.box-title {
+				text-align: center;
+				@include fontsize(130, 1.2);
+				font-family: 'Darby Poster';
+				text-transform: uppercase;
+				margin-bottom: 20px;
+				letter-spacing: 4px;
+
+				span {
+					display: inline;
+					font-family: 'Darby Poster Italic';
+				}
+			}
+
+			.box-text {
+				text-align: center;
+				line-height: 1.5;
+				width: 40%;
+				margin: 0 auto;
+				top: 50%;
+				transform: translateY(-50%);
+
+				p {
+					display: block;
+					max-width: 450px;
+					margin: 0 auto;
+				}
+			}
+
+			&.box-full {
+
+				.box-text {
+					width: 35%;
+				}
+
+				&:last-child {
+					.scroll-to-next { display: none; }
+				}
+			}
+
+			&.box-half {
+				@include span(6);
+
+				.box-text {
+					width: 70%;
+				}
+
+				&:nth-child(2n) {
+					@include last;
+				}
+
+				&:last-child, &:nth-last-child(2) {
+					.scroll-to-next { display: none; }
+				}
+			}
+
+			&.text-dark {
+				color: $headerBG;
+			}
+
+			&.text-light {
+				color: #fff;
+
+				.scroll-to-next {
+					background-image: url(../images/arrow.png);
+				}
+			}
+
+			&:nth-last-child(2) {
+				.scroll-to-next {
+					display: none;
+				}
+			}
+		}
+	}
+}

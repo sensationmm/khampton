@@ -1,0 +1,225 @@
+body#home {
+
+	&.ios {
+		.intro {
+			.scroll-content {
+				bottom: 100px !important;
+			}
+		}
+	}
+
+	&.nav-active {
+		header {
+			position: fixed;
+			top: 0 !important;
+		}
+	}
+
+	.body-outer {
+		padding-top: 32px !important;
+	}
+
+	.intro {
+		top: 0;
+		width: 100%;
+		height: 100vh;
+		background: #000;
+		overflow: hidden;
+
+		.intro-logo {
+			width: 40%;
+			margin: 0 auto;
+			top: 50%;
+			transform: translateY(-50%);
+			text-align: center;
+
+			img { display: inline-block; }
+		}
+
+		video {
+			height: auto;
+		    left: 50%;
+		    min-height: 100%;
+		    min-width: 100%;
+		    overflow: hidden;
+		    position: absolute;
+		    top: 50%;
+		    -webkit-transform: translateX(-50%) translateY(-50%);
+		    transform: translateX(-50%) translateY(-50%);
+		    width: auto;
+		}
+
+		.scroll-content {
+			position: absolute;
+			bottom: 40px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 45px;
+			height: 20px;
+			background: url(../images/arrow-thick.png) center center no-repeat;
+			background-size: cover;
+			cursor: pointer;
+		}
+
+		.nav-icon {
+			position: absolute;
+			left: 20px;
+			top: 31px;
+			width: 30px;
+			height: 30px;
+			overflow: hidden;
+			background: url(../images/icon-nav.png) top left no-repeat;
+			background-size: cover;
+			cursor: pointer;
+		}
+	}
+
+	.page_title {
+		padding: 5% 0 1px 0;
+
+		h1 {
+			@include fontsize(160, 0.9);
+			span {
+	    		font-family: 'Darby Poster Italic';
+				display: inline;
+				display: block;
+			}
+		}
+
+	}
+
+	.home-content {
+		margin-bottom: 20%;
+
+		p {
+			text-align: center;
+		    font-family: 'Darby Poster';
+			@include fontsize(30, 1.3);
+		    text-transform: uppercase;
+	    	letter-spacing: 0.15em;
+
+		    &::before {
+		    	display: block;
+		    	height: 100px;
+		    	width: 1px;
+		    	border-left: 1px solid $headerBGOffset;
+		    	content: " ";
+		    	margin: 15px auto 20px auto;
+		    }
+
+		    em {
+		    	font-style: normal;
+		    	font-family: 'Darby Poster Italic';
+		    }
+
+		    a {
+		    	text-decoration: none;
+		    }
+
+		    &:last-of-type {
+		    	margin-bottom: 0;
+
+		    	&::after {
+		    		display: none;
+		    	}
+		    }
+		}
+	}
+
+	.boxes {
+		margin-bottom: 10%;
+		@include span(full);
+
+		.boxes-row {
+			@include span(full);
+			clear: both;  
+
+			.box {
+				overflow: visible !important;
+
+				&:hover {
+					img {
+						@include opacity(0.5);
+					}
+				}
+
+				.box-text {
+					position: absolute;
+					text-align: center;
+					font-family: 'Darby Poster';
+					@include fontsize(46, 1.2);
+					letter-spacing: 4px;
+					text-transform: uppercase;
+					width: 100%;
+
+					span {
+						font-family: 'Darby Poster Italic';
+					}
+				}
+
+				&.box1 {
+					transform: translateY(25%);
+					@include span(5.7);
+
+					.box-text {
+						bottom: -5px;
+						transform: translateY(50%);
+					}
+				}
+
+				&.box2 {
+					@include span(5.7 last);
+					margin-bottom: 7%;
+
+					.box-text {
+						top: 5px;
+						transform: translateY(-50%);
+					}
+				}
+
+				&.box3 {
+					@include span(5.7 last);
+					padding: 0 6%;
+					margin-top: 5%;
+
+					.box-text {
+						top: 5px;
+						transform: translateY(-50%);
+					}
+				}
+
+				&.box4 {
+					@include span(5.7);
+					margin-bottom: 13%;
+					margin-top: -8%;
+
+					.box-text {
+						bottom: -5px;
+						transform: translateY(50%);
+					}
+				}
+
+				&.box6 {
+					@include span(5.7);
+					padding: 0 6%;
+
+					.box-text {
+						bottom: -5px;
+						transform: translateY(50%);
+					}
+				}
+
+				&.box5 {
+					transform: translateY(25%);
+					@include span(5.7 last);
+
+					.box-text {
+						top: 5px;
+						transform: translateY(-50%);
+					}
+				}
+			}
+
+		}
+	}
+}

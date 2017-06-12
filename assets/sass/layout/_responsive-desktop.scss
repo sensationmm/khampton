@@ -1,0 +1,53 @@
+@media (min-width: $tablet-landscape+1) and (max-width: $desktop-standard) {
+
+	body#woocommerce {
+		div.product {
+			.images {
+				a.zoom {
+					pointer-events: none;
+				}
+
+				.image-link-mask {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+		}
+	}
+
+	body {
+		footer {
+			#mc_signup {
+				@include span(isolate 4 at 5);
+			}
+		}
+	}
+
+	body#woocommerce-cart {
+		.cart-table, .cart-collaterals {
+
+			.shop_table:not(.account-orders-table)  {
+
+				td.shop-details {
+
+					a.product-name {
+						@include fontsize(60);
+					}
+				}
+			}
+		}
+	}
+
+	body#page {
+		.body {
+			@include span(isolate 8 at 3);
+			div.wpcf7 {
+				@include span(full);
+			}
+		}
+	}
+
+}
